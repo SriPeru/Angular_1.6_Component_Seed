@@ -1,0 +1,31 @@
+<!doctype html>
+<html >
+  <head>
+    <title>Sample</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
+    <link href="styles/main.css" rel="stylesheets" />
+
+  </head>
+  <body ng-app="app">
+    
+
+    <script src="bower_components/angular/angular.js" ></script>
+    <script src="bower_components/angular-animate/angular-animate.js" ></script>
+    <script src="//unpkg.com/@angular/router@0.2.0/angular1/angular_1_router.js"></script>
+    <script type="text/javascript">
+      angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+   
+    <script src="scripts/app.js" ></script>
+    <script src="scripts/services/http_service.js" ></script>
+    <script src="scripts/services/app_api.js" ></script>
+    <script src="components/First_Comp/first.js" ></script>
+    <script src="components/Second_Comp/second.js" ></script>
+    
+    <h1>Sample App</h1>
+    <app></app>
+    
+  </body>
+</html>
