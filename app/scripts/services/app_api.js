@@ -1,6 +1,7 @@
 ((angular)=>{
     angular.module('app')
-    .factory('initAPI', initAPI);
+    .factory('initAPI', initAPI)
+    .factory('errorHttpInterceptor', errorHttpInterceptor);
 
     initAPI.$inject=['httpReq'];
 
@@ -18,5 +19,16 @@
             return httpReq.getData('users/'+user);
         }
 
+    }
+
+    errorHttpInterceptor.$inject = ['$exceptionHandler', '$q'];
+    
+    function errorHttpInterceptor($exceptionHandler, $q) {
+        return {
+            responseError: function responseError(rejection) {
+                $exceptionHandler("An HTTP request error has occurred.\nHTTP config: " + rejection.config + ".\nStatus: " + rejection.status);
+                return $q.reject(rejection);
+            }
+        };
     }
 })(window.angular);
